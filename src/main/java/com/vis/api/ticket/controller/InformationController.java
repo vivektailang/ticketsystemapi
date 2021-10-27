@@ -36,18 +36,23 @@ public class InformationController {
 	@RequestMapping(value = "/user/{userid}", method = RequestMethod.GET, produces = { "application/json" }, consumes = {
 			"application/json" })
 	public ResponseEntity<?> userdetails(@PathVariable String userid) {
+		System.out.println(" User name recieved: " + userid);
 		UserModel user = new UserModel();
+		
+		user.setUserId(userid);
+		user.setUserPosition("Team Lead");
+		user.setUserRole("Support");
 		
 		List<UserNotifications> notifications = new ArrayList<>();
 		
 		UserNotifications note1 = new UserNotifications();
-		note1.setId("1");
+		note1.setId(userid);
 		note1.setSubject("Planned Holidays 2021");
 		note1.setDesc("Please check holiday calender for the upcoming months in year 2021.");
 		notifications.add(note1);
 		
 		UserNotifications note2 = new UserNotifications();
-		note2.setId("1");
+		note2.setId(userid);
 		note2.setSubject("Planned Vacations Nov 2021");
 		note2.setDesc("Please get approve your leaves from your supervisor in Nov months for year 2021.");
 		notifications.add(note2);
