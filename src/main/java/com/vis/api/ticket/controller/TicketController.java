@@ -29,7 +29,7 @@ public class TicketController {
 		tickets.setSubject("Recovery for the Bitcoin password");
 		tickets.setDesc("User Amit required to recover the bitcoinn password. Contact no 98976576. Email id is amit@gmail.com.");
 		tickets.setStatus("Pending");
-		tickets.setColorStatus("blue");
+		tickets.setColorStatus("white");
 		
 		
 		List<IssueModel> issues = new ArrayList<>();
@@ -57,7 +57,7 @@ public class TicketController {
 		tickets1.setSubject("Recovery for the Etherium password");
 		tickets1.setDesc("User Sakshi required to recover the Etherium password. Contact no 8786778. Email id is Sakshi_t@gmail.com.");
 		tickets1.setStatus("In Progress");
-		tickets1.setColorStatus("green");
+		tickets1.setColorStatus("white");
 		
 		
 		List<IssueModel> issues2 = new ArrayList<>();

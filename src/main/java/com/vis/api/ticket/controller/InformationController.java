@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.vis.api.ticket.model.InfoDetails;
 import com.vis.api.ticket.model.InfoModel;
 import com.vis.api.ticket.model.UserModel;
 import com.vis.api.ticket.model.UserNotifications;
@@ -25,9 +26,24 @@ public class InformationController {
 	public ResponseEntity<?> home() {
 		InfoModel info = new InfoModel();
 		info.setSubject("Welcome to VIS Ticket System - Notifications");
-		info.setDesc("Power up your customer support with VIS Ticket Systems. Help desk software trusted by over 160,000 businesses."
-				+ "\n	Total service request solved = 90."
-				+ "\n	Upcoming Holiday - 4th Nov 2021 - Diwali");
+		info.setDesc("Power up your customer support with VIS Ticket Systems. Help desk software trusted by multiple business industries. Only for Organizational Level announcements.");
+		List<InfoDetails> details = new ArrayList<>();
+		InfoDetails infodetails = new InfoDetails();
+		infodetails.setId("Circular - 2021-OCT-10-PXY123");
+		infodetails.setDesc("Organization level changes announcement - Live meeting with CEO at 20:20 IST.");
+		details.add(infodetails);
+		
+		InfoDetails infodetails1 = new InfoDetails();
+		infodetails1.setId("Circular - 2021-OCT-10-HOLIDAY5654");
+		infodetails1.setDesc("Total service request solved = 90.");
+		details.add(infodetails1);
+		
+		InfoDetails infodetails2 = new InfoDetails();
+		infodetails2.setId("Meesage - 2021-OCT-10-LEAVE786");
+		infodetails2.setDesc("Upcoming Holiday - 4th Nov 2021 - Diwali");
+		details.add(infodetails2);		
+		
+		info.setDetails(details);
 		
 		return ResponseEntity.ok().body(info);
 	}
