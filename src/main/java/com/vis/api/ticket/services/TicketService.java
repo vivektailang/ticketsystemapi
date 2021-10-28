@@ -29,7 +29,9 @@ public class TicketService {
 		issue1.setSubject("1, Check with user for account ID for Bitcoin.");
 		issue1.setDesc("User Amit required give the all account id and specific questionaeries.");
 		issue1.setStatus("Completed");
-		issues.add(issue1);
+		if(userid.equals("vivek_tailang")) {
+			issues.add(issue1);
+		}
 
 		IssueModel issue3 = new IssueModel();
 		issue3.setId("3");

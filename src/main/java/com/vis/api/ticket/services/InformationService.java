@@ -58,7 +58,10 @@ public class InformationService {
 		note2.setId(userid);
 		note2.setSubject("Planned Vacations Nov 2021");
 		note2.setDesc("Please get approve your leaves from your supervisor in Nov months for year 2021.");
-		notifications.add(note2);
+		
+		if(userid.equals("vivek_tailang")) {
+			notifications.add(note2);
+		}
 		
 		user.setNotifications(notifications);
 		
