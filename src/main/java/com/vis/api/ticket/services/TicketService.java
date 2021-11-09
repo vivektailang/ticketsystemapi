@@ -64,6 +64,26 @@ public class TicketService {
 
 		tickets1.setIssues(issues2);
 		ticketList.add(tickets1);
+		
+		TicketModel tickets2 = new TicketModel();
+		tickets2.setId("3");
+		tickets2.setSubject("Recovery for the Etherium password");
+		tickets2.setDesc(
+				"User Sakshi required to recover the Etherium password. Contact no 8786778. Email id is Sakshi_t@gmail.com.");
+		tickets2.setStatus("In Progress");
+		tickets2.setColorStatus("white");
+
+		List<IssueModel> issues3 = new ArrayList<>();
+
+		IssueModel issue4 = new IssueModel();
+		issue4.setId("2");
+		issue4.setSubject("2, Check with user for account it for Etherium.");
+		issue4.setDesc("User Sakshi required give the all account id and specific questionaeries.");
+		issue4.setStatus("In Progress");
+		issues3.add(issue4);
+
+		tickets2.setIssues(issues3);
+		ticketList.add(tickets2);
 
 		return ticketList;
 	}
