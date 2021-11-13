@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy WAR app to Azure Web App - ptticketsystemapi
+name: Build and deploy JAR app to Azure Web App - ptticketapi
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.war'
+          path: '${{ github.workspace }}/target/*.jar'
 
   deploy:
     runs-on: ubuntu-latest
@@ -36,7 +36,7 @@ jobs:
     environment:
       name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
+    
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
@@ -47,7 +47,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'ptticketsystemapi'
+          app-name: 'ptticketapi'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_d7b8a07dec8b4a4d84b3e1324476e2e0 }}
-          package: '*.war'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_202f160ef7b54bbba9301f3309bf24fc }}
+          package: '*.jar'
